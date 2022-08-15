@@ -34,7 +34,7 @@ collections:
       - {label: "Image caption", name: "imageAlt", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "CategoriaEn"
+  - name: "CategorieEn"
     label: "Categoría en inglés"
     folder: src/blog/categories
     create: true
@@ -46,9 +46,9 @@ collections:
       - {label: "Color", name: "color", widget: "string"}
       - {label: "Image", name: "featuredImage", widget: "image"}
 
-    - name: "CategoriaEs"
+    - name: "CategorieEs"
     label: "Categoría en español"
-    folder: src/blog/categories
+    folder: src/es/blog/categories
     create: true
     fields:
       - {label: "categorie", name: "categorie", widget: "string"}

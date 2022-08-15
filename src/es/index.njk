@@ -1,0 +1,62 @@
+---
+title: Home
+layout: layoutEs.njk
+---
+
+<section class="dark:text-white">
+    <div class="text-center mt-28 md:mt-40 xl:mt-56 font-roboto">
+        <h1 class="font-extrabold text-5xl md:text-6xl font-roboto drop-shadow-md">Jorge Antón</h1>
+        <h3 class="mt-2 font-medium text-lg md:text-2xl text-gray-600 dark:text-gray-400">Todos mis proyectos personales</h3>
+    </div>
+    <div class="flex justify-between mt-40 md:mt-44 font-roboto items-center xl:mt-72">
+        <p class="font-medium text-xl md:text-3xl">Categorías destacadas</p>
+        <a href="/es/categorias/" class="flex items-center gap-1">
+            <p class="hidden text-xl text-gray-600 underline decoration-slate-600 md:block dark:text-gray-400">Ver todas las categorías</p>
+            <p class="text-base text-gray-600 underline decoration-gray-600 md:hidden dark:text-gray-400">Ver todo</p>
+            <svg class="hidden md:block fill-[#575757] dark:fill-gray-400" width="26" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.707 8.707a1 1 0 0 0 0-1.414L19.343.929a1 1 0 1 0-1.414 1.414L23.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h25V7H0v2Z"/></svg>
+            <svg class="md:hidden fill-[#575757] dark:fill-gray-400" width="12" height="8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.354 4.354a.5.5 0 0 0 0-.708L8.172.464a.5.5 0 1 0-.708.708L10.293 4 7.464 6.828a.5.5 0 1 0 .708.708l3.182-3.182ZM11 3.5H0v1h11v-1Z"/></svg>
+        </a>
+    </div>
+
+    <div class="grid text-left mt-8 gap-8 md:grid-cols-3 md:gap-6 md:mt-16 xl:justify-between xl:grid-cols-3 xl:gap-48 xl:mt-24">
+        {% for post in collections.featuredCategorieEs %}
+         <a href=/es/categorias/{{post.data.categorie}} class="w-full rounded-2xl min-h-60 flex items-center flex-col text-center justify-between px-7 md:px-3 xl:hidden hover:-translate-y-1 transition-all duration-200 hover:shadow-md" style="background-color: #{{post.data.color}};">
+            <img src={{post.data.featuredImage}} alt="categorie image" class="w-32">
+            <h2 class="font-bold text-white text-3xl -mt-5"> {{ post.data.title }}</h2>
+            <p class="text-white mt-4 mb-7 text-lg leading-tight">{{post.data.description}}</p>
+         </a>
+
+
+        <div class="hidden xl:flex m-0 relative flex-col text-center group">
+            <div class="absolute inset-0 -z-10 rounded-2xl scale-50 transition-all duration-300 group-hover:scale-x-125 group-hover:scale-y-110 shadow-3xl dark:bg-[#242829]"></div> 
+            <div class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #{{post.data.color}};"><img class="my-7" src={{post.data.featuredImage}}></div>
+                <h3 class="font-bold text-3xl my-3 text-left group-hover:text-center group-hover:-translate-y-40 transition-all duration-300">{{post.data.title}}</h3>
+                <div class="flex justify-between items-center transition-all duration-300">
+                    <div class="flex items-center">
+                        <a href="/"><img class="w-8 h-8 object-cover rounded-full border-2 border-orange-400" src="/assets/images/page/gato1.jpg"></a>
+                        <a href="/" class="my-0 ml-2 transition-all font-bold text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
+                    </div>
+                    <a href="/es/categorias/{{post.data.categorie}}" class="border-solid border-orange-400 rounded-2xl pt-1 border-2 m-0 py-1 px-2 transition-all text-sm font-bold hover:text-white hover:bg-orange-400">5 posts</a>
+                </div>
+            <div class="absolute hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-20">
+                <div class="flex justify-center items-center">
+                    <a href="/es/categorias/{{post.data.categorie}}" class="border-2 border-orange-400 py-2 px-8 rounded-full font-bold text-2xl hover:bg-orange-400 hover:text-white fill-black hover:fill-white group transition-all flex items-center gap-2 group dark:fill-white">
+                        <p class="transition-all">Ver Todo</p>
+                        <svg class="fill-inherit transition-all" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="absolute -translate-y-16 hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-36 text-lg text-gray-700 dark:text-gray-400">{{post.data.description}}</div>
+
+        </div>
+        {% endfor %}
+        
+     </div>
+
+     <div class="flex justify-center mb-16 mt-10 md:mt-16 xl:mt-24 xl:mb-24">
+        <a href="/es/categorias/" class="bg-black flex gap-2 items-center py-3 px-4 rounded-full hover:bg-orange-400 transition-colors duration-200 group">
+            <p class="text-white font-bold text-lg  transition-all duration-200">Ver todas las Categorías</p>
+            <svg class=" fill-white transition-all duration-200" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
+        </a>
+     </div>
+</section>

@@ -1,0 +1,81 @@
+---
+title: Categories
+layout: layout.njk
+---
+
+<section class="dark:text-white">
+    <details class=" mt-24 mb-2 group xl:hidden" open>
+        <summary class="list-none  cursor-pointer focus:outline-none">
+            <div class="flex items-center gap-2 focus:outline-none">
+                <div class="summary-chevron-up">
+                                <svg class=" stroke-gray-600 -rotate-90 group-open:rotate-0 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                <span class="text-3xl font-bold">Recent Posts</span>
+            </div>
+        </summary>
+        <div class="mt-5 mb-14 flex flex-col gap-5 md:hidden">
+            {% set latest_posts = collections.post | reverse %}
+            {% for post in latest_posts.slice(0,2) %}
+                <a href="{{post.url}}" class="border border-gray-600 px-3 py-4 rounded-xl text-lg font-bold overflow-hidden whitespace-nowrap text-ellipsis shadow-md dark:border-[#6f675b]">{{post.data.title}}</a>
+            {% endfor%}
+        </div>
+
+        <div class="hidden md:flex mt-5 mb-14 flex-col gap-5">
+            {% set latest_posts = collections.post | reverse %}
+            {% for post in latest_posts.slice(0,2) %}
+                <a href="{{post.url}}" class="border border-gray-600 px-4 py-6 rounded-2xl text-xl font-bold overflow-hidden whitespace-nowrap text-ellipsis shadow-md dark:border-[#6f675b]">{{post.data.title}}: <span class=" font-normal text-gray-600 text-lg ml-2 dark:text-gray-400">{{post.data.excerpt}}</span> </a>
+            {% endfor%}
+        </div>
+
+    </details>
+
+    <p class="hidden xl:block text-3xl font-bold mt-44">Recent Posts</p>
+    <div class="hidden xl:flex justify-between gap-12 mt-16">
+        {% set latest_posts = collections.post | reverse %}
+        {% for post in latest_posts.slice(0,2) %}
+            <a href="{{post.url}}" class="relative flex-1 border border-gray-600 shadow-md px-6 py-8 rounded-2xl dark:border-[#6f675b]">
+                <p class="inline-block text-2xl font-bold decoration-4 after:block after:content-[''] after:h-1 after:bg-black after:rounded-full after:mt-4 dark:after:bg-gray-300">{{post.data.title}}:</p>
+                <p class="text-gray-600 text-xl w-80 mt-4 dark:text-gray-400">{{post.data.excerpt}}</p>
+                <img class="absolute bottom-0 right-0 w-60 object-contain -z-10" src={{post.data.featuredImageMini}} alt="{{post.data.imageAlt}}">
+            </a>
+        {% endfor %}
+    </div>
+
+
+    <h2 class=" font-bold text-3xl mt-6 xl:mt-20">Categories</h2>
+
+    <div class="grid text-left mt-8 mb-28 gap-8 md:grid-cols-3 md:gap-6 md:mt-16 xl:justify-between xl:grid-cols-3 xl:gap-48 xl:mt-24">
+        {% for post in collections.categorie %}
+         <a href="/categories/{{post.data.categorie}}" class="w-full rounded-2xl min-h-60 flex items-center flex-col text-center justify-between px-7 md:px-3 xl:hidden hover:-translate-y-1 transition-all duration-200 hover:shadow-md" style="background-color: #{{post.data.color}};">
+            <img src={{post.data.featuredImage}} alt="categorie image" class="w-32">
+            <h2 class="font-bold text-white text-3xl -mt-5"> {{ post.data.title }}</h2>
+            <p class="text-white mt-4 mb-7 text-lg leading-tight">{{post.data.description}}</p>
+         </a>
+
+
+        <div class="hidden xl:flex m-0 relative flex-col text-center group">
+            <div class="absolute inset-0 -z-10 rounded-2xl scale-50 transition-all duration-300 group-hover:scale-x-125 group-hover:scale-y-110 shadow-3xl dark:bg-[#242829]"></div> 
+            <div class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #{{post.data.color}};"><img class="my-7" src={{post.data.featuredImage}}></div>
+                <h3 class="font-bold text-3xl my-3 text-left group-hover:text-center group-hover:-translate-y-40 transition-all duration-300">{{post.data.title}}</h3>
+                <div class="flex justify-between items-center transition-all duration-300">
+                    <div class="flex items-center">
+                        <a href="/"><img class="w-8 h-8 object-cover rounded-full border-2 border-orange-400" src="/assets/images/page/gato1.jpg"></a>
+                        <a href="/" class="my-0 ml-2 transition-all font-bold text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
+                    </div>
+                    <a href="/categories/{{post.data.categorie}}" class="border-solid border-orange-400 rounded-2xl pt-1 border-2 m-0 py-1 px-2 transition-all text-sm font-bold hover:text-white hover:bg-orange-400">5 posts</a>
+                </div>
+            <div class="absolute hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-20">
+                <div class="flex justify-center items-center">
+                    <a href="/categories/{{post.data.categorie}}" class="border-2 border-orange-400 py-2 px-8 rounded-full font-bold text-2xl hover:bg-orange-400 hover:text-white fill-black hover:fill-white group transition-all flex items-center gap-2 group dark:fill-white">
+                        <p class="transition-all">See All</p>
+                        <svg class="fill-inherit transition-all" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="absolute -translate-y-16 hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-36 text-lg text-gray-700 dark:text-gray-400">{{post.data.description}}</div>
+
+        </div>
+        {% endfor %}
+        
+     </div>
+</section>

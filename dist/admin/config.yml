@@ -34,7 +34,7 @@ collections:
       - {label: "Image caption", name: "imageAlt", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "Prueba"
+  - name: "CategorieEn"
     label: "Categoría en inglés"
     folder: src/blog/categories
     create: true
@@ -47,15 +47,15 @@ collections:
       - {label: "Color", name: "color", widget: "string"}
       - {label: "Image", name: "featuredImage", widget: "image"}
 
-    - name: "Hola"
-    label: "Categoría en español"
-    folder: src/es/blog/categories
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "categorie", name: "categorie", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list", default: ["categorieEs"]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Color", name: "color", widget: "string"}
-      - {label: "Image", name: "featuredImage", widget: "image"}
+  - name: "CategorieEs"
+  label: "Categoría en español"
+  folder: src/es/blog/categories
+  create: true
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  fields:
+    - {label: "categorie", name: "categorie", widget: "string"}
+    - {label: "Tags", name: "tags", widget: "list", default: ["categorieEs"]}
+    - {label: "Title", name: "title", widget: "string"}
+    - {label: "Description", name: "description", widget: "string"}
+    - {label: "Color", name: "color", widget: "string"}
+    - {label: "Image", name: "featuredImage", widget: "image"}

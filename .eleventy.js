@@ -3,6 +3,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = (config) => {
     config.addPlugin(syntaxHighlight)
     config.addPassthroughCopy({"src/assets": "assets"});
+    config.addPassthroughCopy({"src/admin"});
     config.setFrontMatterParsingOptions({
         excerpt: true,
         excerpt_separation: "<!-- excerpt -->",

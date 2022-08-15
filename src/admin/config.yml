@@ -4,22 +4,24 @@ backend:
 media_folder: "/dist/assets/images"
 public_folder: "/src/assets/images"
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "BlogEs"
+    label: "Publicación en inglés"
     folder: "src/blog/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["post"]}
+      - {label: "Layout", name: "layout", widget: "hidden", default: ["post"]}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Description", name: "excerpt", widget: "string"}
+      - {label: "Image", name: "featuredImage", widget: "image"}
+      - {label: "Small Image", name: "featuredImageMini", widget: "image"}
+      - {label: "Image caption", name: "imageAlt", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "blogEs"
-    label: "BlogEs"
-    folder: "src/blog/posts"
+  - name: "BlogEs"
+    label: "Publicación en español"
+    folder: "src/es/blog/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:

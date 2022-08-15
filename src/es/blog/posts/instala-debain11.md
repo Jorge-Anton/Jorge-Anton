@@ -2,8 +2,8 @@
 title: Instala Debian 11 preparado para hostear servicios
 tags: ["postEs", "linuxEs"]
 excerpt: En esta publicación, podrás encontrar una guía paso a paso para llevar acabo una instalación de Debian optimizada para hostear servicios.
-featuredImage: /assets/images/blog/thumbnails/large/2022/8/debian-logo.png
-featuredImageMini: /assets/images/blog/thumbnails/small/2022/8/debian-logo.png
+featuredImage: /assets/images/debian-logo-lg.png
+featuredImageMini: /assets/images/debian-logo-mini.png
 imageAlt: Debian
 layout: postEs.njk
 ---
@@ -27,17 +27,17 @@ layout: postEs.njk
 
 4. Iniciar la instalación gráfica:
 - Nos aparecerá un menú como el siguiente en donde seleccionaremos la instalación gráfica presionando Enter.
-![Graphic Install](/assets/images/blog/es/2022/8/Graphic-Install.png)
+![Graphic Install](/assets/images/Graphic-Install-Es.png)
 
 5. Llevar a cabo la instalación:
 - El proceso es bastante sencillo, solo hay que seguir los pasos que se nos indican.
 - Cuando nos pida el nombre de la máquina, podemos dejar el valor por defecto (debian) o poner cualquier otro nombre. Este nombre nos permite encontrar la máquina en la red
-![Machine Name](/assets/images/blog/es/2022/8/Machine-Name.png)
+![Machine Name](/assets/images/Machine-Name-Es.png)
 - Cuando nos pida un nombre de dominio, continuamos sin poner nada.
 - El siguiente paso es establecer la clave de superusuario. Es muy importante recordar esta contraseña o apuntarla en algún sitio.
 - Lo siguiente es establecer un nombre y contraseña para el ususario con bajos privilegios.
 - En el particionado de discos seleccionamos la opción de **Guiado - Utilizar todo el disco**
-![Partition](/assets/images/blog/es/2022/8/Partition.png)
+![Partition](/assets/images/Partition-Es.png)
 - Seleccionamos el disco en el que queremos instalar el sistema.
 - En el esquema de particionado seleccionamos **Todos los ficheros en una partición (recomendado para novatos)**.
 - Finalizamos el particionado.
@@ -46,7 +46,7 @@ layout: postEs.njk
 - Cuando nos pregunte si deseamos analizar medios de instalación adicionales seleccionaremos que **NO**.
 - Si no estamos utilizando la ISO de instalación por red, nos preguntará si deseamos hacer una réplica de red, a los que seleccionaremos que **NO**
 - En la seeción de seleccionar programas, dejaremos la selección de paquetes de la siguiente manera:
-![Packages](/assets/images/blog/es/2022/8/Packages.png)
+![Packages](/assets/images/Packages-Es.png)
 - Cuando nos pregunte si deseamos instalar el cargador de arranque GRUB seleccionamos que **SI** y continuamos seleccionando el disco en donde se instalará GRUB.
 - Una vez se haya instalado, habremos finalizado la instalación. Solo tenemos que reiniciar y asegurarnos de que hemos extraído el pendrive para que no vuelva a arrancar desde el medio de instalación.
 - Una vez hayamos iniciado sesión, actualizaremos el sistema con los siguientes comandos:

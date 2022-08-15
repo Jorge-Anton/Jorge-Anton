@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 media_folder: "/src/assets/images"
-public_folder: "/dist/assets/images"
+public_folder: "/assets/images"
 collections:
   - name: "BlogEn"
     label: "Publicación en inglés"
@@ -25,9 +25,11 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["postEs"]}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "postEs.njk"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Description", name: "excerpt", widget: "string"}
+      - {label: "Image", name: "featuredImage", widget: "image"}
+      - {label: "Small Image", name: "featuredImageMini", widget: "image"}
+      - {label: "Image caption", name: "imageAlt", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}

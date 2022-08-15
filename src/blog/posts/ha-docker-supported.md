@@ -2,8 +2,8 @@
 title: Install supported Home Assistant with Docker
 tags: ["post", "home-assistant"]
 excerpt: In this publication, you will find a step-by-step guide to perform a supported home assistant installation with docker.
-featuredImage: /assets/images/blog/thumbnails/large/2022/8/docker.png
-featuredImageMini: /assets/images/blog/thumbnails/small/2022/8/docker-mini.png
+featuredImage: /assets/images/docker-lg.png
+featuredImageMini: /assets/images/docker-mini.png
 imageAlt: Docker
 layout: post.njk
 ---

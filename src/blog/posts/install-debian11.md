@@ -2,8 +2,8 @@
 title: Install Debian 11 ready for hosting services
 tags: ["post", "linux"]
 excerpt: In this post, you will find a step-by-step guide to perform a Debian installation optimized for hosting services.
-featuredImage: /assets/images/blog/thumbnails/large/2022/8/debian-logo.png
-featuredImageMini: /assets/images/blog/thumbnails/small/2022/8/debian-logo.png
+featuredImage: /assets/images/debian-logo-lg.png
+featuredImageMini: /assets/images/debian-logo-mini.png
 imageAlt: Debian
 layout: post.njk
 ---
@@ -27,17 +27,17 @@ layout: post.njk
 
 4. Start the graphical installation:
 - A menu like the following one will appear where we will select the graphical installation by pressing Enter.
-![Graphic Install](/assets/images/blog/en/2022/8/Graphic-Install.png)
+![Graphic Install](/assets/images/Graphic-Install-En.png)
 
 5. Carry out the installation:
 - The process is quite simple, just follow the steps indicated.
 - When asked for the hostname, we can leave the default value (debian) or put any other name. This name allows us to find the machine on the network.
-![Hostname](/assets/images/blog/en/2022/8/Machine-Name.png)
+![Hostname](/assets/images/Machine-Name-En.png)
 - When it asks for a domain name, we continue without putting anything.
 - The next step is to set the superuser password. It is very important to remember this password or write it down somewhere.
 - The next step is to set a name and password for the user with low privileges.
 - In disk partitioning select the **Guided - Use entire disk** option.
-![Partition](/assets/images/blog/en/2022/8/Partition.png)
+![Partition](/assets/images/Partition-En.png)
 - Select the disk on which you want to install the system.
 - In the partitioning scheme select **All files in one partition (recommended for new users)**.
 - We finish the partitioning.
@@ -46,7 +46,7 @@ layout: post.njk
 - When asked if we want to scan extra installation media we will select **NO**.
 - If we are not using the network installation ISO, it will ask us if we want to make a network mirror, to which we will select **NO**.
 - In the program selection section, we will leave the package selection as follows:
-![Packages](/assets/images/blog/en/2022/8/Packages.png)
+![Packages](/assets/images/Packages-En.png)
 - When asked if we want to install the GRUB boot loader we select **YES** and continue selecting the disk where GRUB will be installed.
 - Once it has been installed, the installation is complete. We only have to reboot and make sure that we have removed the USB drive so that it does not restart from the installation media.
 

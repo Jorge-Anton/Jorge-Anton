@@ -2,8 +2,8 @@
 title: Instala el driver para Asus USB-AC56 en Linux
 tags: ["postEs", "linuxEs"]
 excerpt: En esta publicación, encontrarás una guía paso a paso para hacer funcionar el adaptador Wi-Fi Asus USB AC-56 en Linux.
-featuredImage: /assets/images/blog/thumbnails/large/2022/8/asus-usb.png
-featuredImageMini: /assets/images/blog/thumbnails/small/2022/8/asus-usb.png
+featuredImage: /assets/images/asus-usb-lg.png
+featuredImageMini: /assets/images/asus-usb-mini.png
 imageAlt: USB AC-56
 layout: postEs.njk
 ---

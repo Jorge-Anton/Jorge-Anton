@@ -38,7 +38,6 @@ collections:
     label: "Categoría en inglés"
     folder: src/blog/categories
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "categorie", name: "categorie", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["categorie"]}
@@ -51,7 +50,6 @@ collections:
     label: "Categoría en español"
     folder: src/es/blog/categories
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "categorie", name: "categorie", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["categorieEs"]}

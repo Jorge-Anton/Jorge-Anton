@@ -33,3 +33,27 @@ collections:
       - {label: "Small Image", name: "featuredImageMini", widget: "image"}
       - {label: "Image caption", name: "imageAlt", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "CategorieEn"
+    label: "Categoría en inglés"
+    folder: src/blog/categories
+    create: true
+    fields:
+      - {label: "categorie", name: "categorie", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["categorie"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Color", name: "color", widget: "string"}
+      - {label: "Image", name: "featuredImage", widget: "image"}
+
+    - name: "CategorieEs"
+    label: "Categoría en español"
+    folder: src/blog/categories
+    create: true
+    fields:
+      - {label: "categorie", name: "categorie", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["categorieEs"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Color", name: "color", widget: "string"}
+      - {label: "Image", name: "featuredImage", widget: "image"}

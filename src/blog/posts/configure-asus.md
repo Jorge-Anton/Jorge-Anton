@@ -3,7 +3,7 @@ tags:
   - post
   - linux
 layout: post.njk
-title: Install Asus USB-AC56 driver on
+title: Install Asus USB-AC56 driver on Linux
 excerpt: In this post, you will find a step by step tutorial on how to setup the
   Asus USB AC-56 Wi-Fi dongle on Linux.
 featuredImage: /assets/images/blog/thumbnails/large/2022/8/asus-usb.png

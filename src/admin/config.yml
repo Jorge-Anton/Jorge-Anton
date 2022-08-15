@@ -11,7 +11,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Tags", name: "tags", widget: "list", default: ["post"]}
-      - {label: "Layout", name: "layout", widget: "hidden", default: ["post.njk"]}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post.njk"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "excerpt", widget: "string"}
       - {label: "Image", name: "featuredImage", widget: "image"}

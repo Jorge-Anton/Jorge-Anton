@@ -18,7 +18,7 @@ imageAlt: Nextcloud AIO
 ## Requirements:
 
 - Be minimally familiar with linux and the terminal, since the installation is done from the terminal.
-- Have a computer with a linux distribution on which to install Nextcloud. If you do not have a computer with a distribution installed, you can follow [this guide](/en/blog/posts/install-debian11/) to install the Debian distribution ready to host services.
+- Have a computer with a linux distribution on which to install Nextcloud. If you do not have a computer with a distribution installed, you can follow [this guide](/blog/posts/install-debian11/) to install the Debian distribution ready to host services.
 
 
 ## Steps:

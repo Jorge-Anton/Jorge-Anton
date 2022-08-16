@@ -5,8 +5,8 @@ tags:
 layout: postEs.njk
 title: Añade una conexión puente (bridged) en virt-manager
 excerpt: En esta publicación, podrás encontrar una guía paso a paso para añadir una conexión puente (bridged connection) en virt-manager.
-featuredImage: /assets/images/nextcloudAIO-lg.png
-featuredImageMini: /assets/images/nextcloudAIO-mini.png
+featuredImage: /assets/images/bridge-lg.png
+featuredImageMini: /assets/images/bridge-mini.png
 imageAlt: Bridged
 ---
 

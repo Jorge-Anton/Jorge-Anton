@@ -11,7 +11,7 @@ layout: post.njk
 # {{title}}:
 ## Requirements:
 - A computer to install Debian on.
-- A USB drive to store the ISO.
+- A USB drive with at least 1GB of storage.
 
 ## Steps:
 1. Download the Debian ISO:

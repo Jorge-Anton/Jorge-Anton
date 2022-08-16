@@ -1,5 +1,5 @@
 ---
-title: Instala Debian 11 preparado para hostear servicios
+title: Instala Debian 11 preparado para alojar servicios
 tags: ["postEs", "linuxEs"]
 excerpt: En esta publicación, podrás encontrar una guía paso a paso para llevar acabo una instalación de Debian optimizada para hostear servicios.
 featuredImage: /assets/images/debian-logo-lg.png
@@ -11,7 +11,7 @@ layout: postEs.njk
 # {{title}}:
 ## Requisitos:
 - Un ordenador en el que instalar Debian.
-- Una unidad USB para almacenar la ISO.
+- Una unidad USB de 1GB de almacenamienro como mínimo.
 
 ## Pasos:
 1. Descargar la ISO de Debian:

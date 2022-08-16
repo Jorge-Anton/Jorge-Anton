@@ -3,9 +3,9 @@ tags:
   - postEs
   - nextcloudEs
 layout: postEs.njk
-title: Instala Nextcloud AIO
+title: Instala Nextcloud All in One de forma sencilla
 excerpt: En esta publicación, podrás encontrar una guía paso a paso para llevar
-  acabo una instalación de Nextcloud All in One (docker).
+  acabo una instalación de Nextcloud All in One.
 featuredImage: /assets/images/nextcloudAIO-lg.png
 featuredImageMini: /assets/images/nextcloudAIO-mini.png
 imageAlt: Nextcloud AIO
@@ -13,12 +13,12 @@ imageAlt: Nextcloud AIO
 # {{title}}:
 ## Introducción:
 - {{excerpt}}
-- La documentación origina se puede encontrar [aquí.](https://github.com/nextcloud/all-in-one)
+- La documentación original se puede encontrar [aquí.](https://github.com/nextcloud/all-in-one)
 
 ## Requisitos:
 
 - Estar mínimamente familiarizado con linux y la terminal, ya que la instalación se realiza desde la terminal.
-- Tener un ordenador con una distribución de linux en donde instalar Nextcloud.
+- Tener un ordenador con una distribución de linux en donde instalar Nextcloud. Si no tienes un ordenador con una distribución instalada, puedes seguir [esta guía](/es/blog/posts/instala-debian11/) para instalar la distribución Debian preparada para alojar servicios.
 
 ## Pasos:
 1. Actualizar el sistema:
@@ -33,11 +33,16 @@ imageAlt: Nextcloud AIO
 	```
 2. Instalar docker:
 
+- El siguiente comando descargará e instalará docker.
+
 	```bash
 	curl -fsSL get.docker.com | sudo sh
 	```
 
 3. Instalar Nextcloud:
+
+- Los siguientes comandos descargarán e instalarán Nextcloud AIO dependiendo de la arquitectura de la máquina.
+
 	Para procesadores x64:
 	```bash
 	# For x64 CPUs:

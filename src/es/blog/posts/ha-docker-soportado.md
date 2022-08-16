@@ -11,7 +11,7 @@ layout: postEs.njk
 # {{title}}:
 ## Requisitos:
 - Estar mínimamente familiarizado con linux y la terminal, ya que la instalación se realiza desde la terminal.
-- Una instalación nueva de **Debian 11**, ya que esta es la única distribución con la que podemos tener una instalación soportada. Si no sabes como instalar debian 11, mira [esta publicación]() en la que explico como instalar de forma óptima Debian para su uso con Home Assistant.
+- Una instalación nueva de **Debian 11**, ya que esta es la única distribución con la que podemos tener una instalación soportada. Si no sabes como instalar debian 11, mira [esta publicación](/es/blog/posts/instala-debian11/) en la que explico como instalar de forma óptima Debian para su uso con Home Assistant.
 - Una conexión a internet.
 
 ## Pasos:

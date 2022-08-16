@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <title>Instala Nextcloud AIO</title>
+    <title>Instala Nextcloud All in One de forma sencilla</title>
     <style>
         summary::-webkit-details-marker { display: none }
 
@@ -109,21 +109,25 @@
         transition-duration: 200ms;
 
     }
+
+    summary {
+        cursor: pointer;
+    }
 </style>
 
 <article class="mt-28 mb-24 md:grid justify-center">
     <div class="prose prose-h1:text-3xl prose-img:rounded-lg prose-img:border prose-img:border-gray-600 transition-all duration-200 max-w-screen-lg md:prose xl:prose-lg xl:max-w-screen-lg dark:xl:prose-invert dark:md:prose-invert dark:prose-invert dark:prose-img:border-[#6f675b]" id="prose">
 
-        <h1>Instala Nextcloud AIO:</h1>
+        <h1>Instala Nextcloud All in One de forma sencilla:</h1>
 <h2>Introducción:</h2>
 <ul>
-<li>En esta publicación, podrás encontrar una guía paso a paso para llevar acabo una instalación de Nextcloud All in One (docker).</li>
-<li>La documentación origina se puede encontrar <a href="https://github.com/nextcloud/all-in-one">aquí.</a></li>
+<li>En esta publicación, podrás encontrar una guía paso a paso para llevar acabo una instalación de Nextcloud All in One.</li>
+<li>La documentación original se puede encontrar <a href="https://github.com/nextcloud/all-in-one">aquí.</a></li>
 </ul>
 <h2>Requisitos:</h2>
 <ul>
 <li>Estar mínimamente familiarizado con linux y la terminal, ya que la instalación se realiza desde la terminal.</li>
-<li>Tener un ordenador con una distribución de linux en donde instalar Nextcloud.</li>
+<li>Tener un ordenador con una distribución de linux en donde instalar Nextcloud. Si no tienes un ordenador con una distribución instalada, puedes seguir <a href="/es/blog/posts/instala-debian11/">esta guía</a> para instalar la distribución Debian preparada para alojar servicios.</li>
 </ul>
 <h2>Pasos:</h2>
 <ol>
@@ -136,17 +140,29 @@
 </li>
 <li>
 <p>Instalar docker:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>El siguiente comando descargará e instalará docker.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -fsSL get.docker.com <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">sh</span></code></pre>
 </li>
+</ul>
+<ol start="3">
+<li>Instalar Nextcloud:</li>
+</ol>
+<ul>
 <li>
-<p>Instalar Nextcloud:
-Para procesadores x64:</p>
+<p>Los siguientes comandos descargarán e instalarán Nextcloud AIO dependiendo de la arquitectura de la máquina.</p>
+<p>Para procesadores x64:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># For x64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest</code></pre>
- <details>
- <summary>Para procesadores ARM como la Raspberry Pi:</summary>
+  <details>
+  <summary>Para procesadores ARM como la Raspberry Pi:</summary>
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># For arm64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest-arm64</code></pre>
- </details>
+  </details>
 </li>
+</ul>
+<ol start="4">
 <li>
 <p>Una vez se hayan descargado las imágenes de docker e iniciado los contenedores, podremos acceder a la interfaz por el puerto 8080. Ejemplo: https://dirección-ip:8080</p>
 </li>

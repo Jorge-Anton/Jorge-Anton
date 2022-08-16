@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <title>Install Debian 11 ready for hosting services</title>
+    <title>Install Nextcloud All in One in a simple way</title>
     <style>
 
         summary::-webkit-details-marker {
@@ -122,106 +122,84 @@
 <article class="mt-28 mb-24 md:grid justify-center">
     <div class="prose prose-h1:text-3xl prose-img:rounded-lg prose-img:border prose-img:border-gray-600 max-w-screen-lg md:prose xl:prose-lg xl:max-w-screen-lg dark:xl:prose-invert dark:md:prose-invert dark:prose-invert dark:prose-img:border-[#6f675b]" id="prose">
 
-        <h1>Install Debian 11 ready for hosting services:</h1>
+        <h1>Install Nextcloud All in One in a simple way:</h1>
+<h2>Introduction:</h2>
+<ul>
+<li>In this publication, you will find a step-by-step guide to perform a Nextcloud All in One installation.</li>
+<li>The original documentation can be found <a href="https://github.com/nextcloud/all-in-one">here.</a></li>
+</ul>
 <h2>Requirements:</h2>
 <ul>
-<li>A computer to install Debian on.</li>
-<li>A USB drive with at least 1GB of storage.</li>
+<li>Be minimally familiar with linux and the terminal, since the installation is done from the terminal.</li>
+<li>Have a computer with a linux distribution on which to install Nextcloud. If you do not have a computer with a distribution installed, you can follow <a href="/blog/posts/install-debian11/">this guide</a> to install the Debian distribution ready to host services.</li>
 </ul>
 <h2>Steps:</h2>
 <ol>
-<li>Download the Debian ISO:</li>
-</ol>
-<ul>
-<li>If the computer on which we are going to install Debian has a wired Internet connection, we can download the net installation ISO. If this is not the case, we will have to download the complete system ISO.
-<ul>
-<li><a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.4.0-amd64-netinst.iso">ISO for network installation</a></li>
-<li><a href="https://chuangtzu.ftp.acc.umu.se/debian-cd/current/amd64/iso-dvd/debian-11.4.0-amd64-DVD-1.iso">Full system ISO</a></li>
-</ul>
+<li>
+<p>Upgrade the system:</p>
+<p><strong>Debian derivatives</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade<br>``<span class="token variable"><span class="token variable">`</span><br>**Fedora derivatives<br><span class="token variable">`</span></span>``<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span><br><span class="token function">sudo</span> dnf upgrade<br><span class="token variable">`</span></span>``<br></code></pre>
 </li>
-</ul>
-<ol start="2">
-<li>Flash the ISO on a flash drive:</li>
+<li>
+<p>Install docker:</p>
+</li>
 </ol>
 <ul>
-<li>For this you can use any program you want, but my recommendation is <a href="https://www.balena.io/etcher/">balenaEtcher</a>, as it makes this process quite simple.</li>
+<li>
+<p>The following command will download and install docker.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -fsSL get.docker.com <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">sh</span></code></pre>
+</li>
 </ul>
 <ol start="3">
-<li>Boot from USB drive:</li>
+<li>Install Nextcloud:</li>
 </ol>
 <ul>
-<li>To be able to boot the computer where we are going to install debian from the USB drive, first we will have to access the BIOS and modify the Boot Order to boot from the USB drive. Save the changes and exit the BIOS.</li>
+<li>
+<p>The following commands will download and install Nextcloud AIO depending on the machine architecture.</p>
+<p>For x64 processors:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># For x64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest</code></pre>
+  <details>
+  <summary>For ARM processors such as the Raspberry Pi:</summary>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># For arm64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest-arm64</code></pre>
+  </details>
+</li>
 </ul>
 <ol start="4">
-<li>Start the graphical installation:</li>
+<li>
+<p>Once the docker images have been downloaded and the containers have been started, we will be able to access the interface through port 8080. Example: https://ip-address:8080</p>
+</li>
+<li>
+<p>To complete the installation we need a domain pointing to our server. If you already have a domain configured you can skip this step.</p>
+<p>To get a domain pointing to our server we can use <a href="https://www.duckdns.org/">duckdns.</a></p>
+<ol>
+<li>The first thing we have to do is to create an account.</li>
+<li>The next step is to add a domain.</li>
+<li>Now we have to go to the NAT/PAT section of our router to open port 443 and redirect it to port 443 of the ip of the machine where Nextcloud is running. The steps in each router may vary but it should look something like this.
+<img src="/assets/images/port-forwarding.png" alt="Port forwarding"></li>
+<li>Once the previous steps are done we will have our domain configured.</li>
+</ol>
+</li>
+<li>
+<p>Once we have logged into the interface with step 4, we will have to provide our domain:</p>
+</li>
 </ol>
 <ul>
-<li>A menu like the following one will appear where we will select the graphical installation by pressing Enter.
-<img src="/assets/images/Graphic-Install-En.png" alt="Graphic Install"></li>
+<li>The prefix https:// should not be used.
+<img src="/assets/images/domain.png" alt="Domain"></li>
 </ul>
-<ol start="5">
-<li>Carry out the installation:</li>
+<ol start="7">
+<li>
+<p>In the Optional Addons section, my recommendation is to disable Collabora and Nextcloud Talk and only enable OnlyOffice if you want an integrated office suite.
+<img src="/assets/images/Optional-Addons.png" alt="Optional Addons"></p>
+</li>
+<li>
+<p>In the section Timezone Change, we will have to select our time zone, we can see which is our time zone in the <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List">following link</a>
+<img src="/assets/images/Timezone.png" alt="Timezone Change"></p>
+</li>
+<li>
+<p>Once our preferences have been configured, we will finish the installation by pressing the <strong>Start containers</strong> button.</p>
+</li>
 </ol>
-<ul>
-<li>
-<p>The process is quite simple, just follow the steps indicated.</p>
-</li>
-<li>
-<p>When asked for the hostname, we can leave the default value (debian) or put any other name. This name allows us to find the machine on the network.
-<img src="/assets/images/Machine-Name-En.png" alt="Hostname"></p>
-</li>
-<li>
-<p>When it asks for a domain name, we continue without putting anything.</p>
-</li>
-<li>
-<p>The next step is to set the superuser password. It is very important to remember this password or write it down somewhere.</p>
-</li>
-<li>
-<p>The next step is to set a name and password for the user with low privileges.</p>
-</li>
-<li>
-<p>In disk partitioning select the <strong>Guided - Use entire disk</strong> option.
-<img src="/assets/images/Partition-En.png" alt="Partition"></p>
-</li>
-<li>
-<p>Select the disk on which you want to install the system.</p>
-</li>
-<li>
-<p>In the partitioning scheme select <strong>All files in one partition (recommended for new users)</strong>.</p>
-</li>
-<li>
-<p>We finish the partitioning.</p>
-</li>
-<li>
-<p>We confirm the changes in the disk.</p>
-</li>
-<li>
-<p>Next, the base system will be installed.</p>
-</li>
-<li>
-<p>When asked if we want to scan extra installation media we will select <strong>NO</strong>.</p>
-</li>
-<li>
-<p>If we are not using the network installation ISO, it will ask us if we want to make a network mirror, to which we will select <strong>NO</strong>.</p>
-</li>
-<li>
-<p>In the program selection section, we will leave the package selection as follows:
-<img src="/assets/images/Packages-En.png" alt="Packages"></p>
-</li>
-<li>
-<p>When asked if we want to install the GRUB boot loader we select <strong>YES</strong> and continue selecting the disk where GRUB will be installed.</p>
-</li>
-<li>
-<p>Once it has been installed, the installation is complete. We only have to reboot and make sure that we have removed the USB drive so that it does not restart from the installation media.</p>
-</li>
-<li>
-<p>Once logged in, we will update the system with the following commands:</p>
-</li>
-</ul>
-<pre class="language-bash"><code class="language-bash"><span class="token function">su</span> <br><span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt</span> upgrade</code></pre>
-<ul>
-<li>That's it, you have successfully installed debian!</li>
-</ul>
 
     </div>
 </article>

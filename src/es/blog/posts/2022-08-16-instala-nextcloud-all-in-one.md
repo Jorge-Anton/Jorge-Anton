@@ -17,7 +17,7 @@ imageAlt: Nextcloud AIO
 ## Requisitos:
 
 - Estar mínimamente familiarizado con linux y la terminal, ya que la instalación se realiza desde la terminal.
-- Tener un ordenador con una distribución de linux en donde instalar Nextcloud. Si no tienes un ordenador con una distribución instalada, puedes seguir [esta guía](/es/blog/posts/instala-debian11/) para instalar la distribución Debian preparada para alojar servicios.
+- Tener un ordenador con una distribución de linux en donde instalar Nextcloud. Si no tienes un ordenador con una distribución instalada, puedes seguir [esta guía](/es/blog/posts/2022-08-15-instala-debian11/) para instalar la distribución Debian preparada para alojar servicios.
 
 ## Pasos:
 1. Actualizar el sistema:

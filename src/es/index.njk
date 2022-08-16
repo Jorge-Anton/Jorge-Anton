@@ -29,14 +29,13 @@ layout: layoutEs.njk
 
         <div class="hidden xl:flex m-0 relative flex-col text-center group">
             <div class="absolute inset-0 -z-10 rounded-2xl scale-50 transition-all duration-300 group-hover:scale-x-125 group-hover:scale-y-110 shadow-3xl dark:bg-[#242829]"></div> 
-            <div class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #{{post.data.color}};"><img class="my-7" src={{post.data.featuredImage}}></div>
+            <a href="/es/categorias/{{post.data.categorie}}" class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #{{post.data.color}};"><img class="my-7" src={{post.data.featuredImage}}></a>
                 <h3 class="font-bold text-3xl my-3 text-left group-hover:text-center group-hover:-translate-y-40 transition-all duration-300">{{post.data.title}}</h3>
                 <div class="flex justify-between items-center transition-all duration-300">
                     <div class="flex items-center">
                         <a href="/"><img class="w-8 h-8 object-cover rounded-full border-2 border-orange-400" src="/assets/images/gato1.jpg"></a>
-                        <a href="/" class="my-0 ml-2 transition-all font-bold text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
+                        <a href="/" class="my-0 ml-2 transition-all font-medium text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
                     </div>
-                    <a href="/es/categorias/{{post.data.categorie}}" class="border-solid border-orange-400 rounded-2xl pt-1 border-2 m-0 py-1 px-2 transition-all text-sm font-bold hover:text-white hover:bg-orange-400">5 posts</a>
                 </div>
             <div class="absolute hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-20">
                 <div class="flex justify-center items-center">

@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <title>Install Nextcloud All in One in a simple way</title>
+    <title>Add a bridged connection in virt-manager</title>
     <style>
 
         summary::-webkit-details-marker {
@@ -120,84 +120,63 @@
 </style>
 
 <article class="mt-28 mb-24 md:grid justify-center">
-    <div class="prose prose-h1:text-3xl prose-img:rounded-lg prose-img:border prose-img:border-gray-600 max-w-screen-lg md:prose xl:prose-lg xl:max-w-screen-lg dark:xl:prose-invert dark:md:prose-invert dark:prose-invert dark:prose-img:border-[#6f675b]" id="prose">
+    <div class="prose prose-h1:text-3xl prose-img:rounded-2xl prose-img:border prose-img:border-gray-600 max-w-screen-lg md:prose xl:prose-lg xl:max-w-screen-lg dark:xl:prose-invert dark:md:prose-invert dark:prose-invert dark:prose-img:border-[#6f675b]" id="prose">
 
-        <h1>Install Nextcloud All in One in a simple way:</h1>
+        <h1>Add a bridged connection in virt-manager:</h1>
 <h2>Introduction:</h2>
 <ul>
-<li>In this publication, you will find a step-by-step guide to perform a Nextcloud All in One installation.</li>
-<li>The original documentation can be found <a href="https://github.com/nextcloud/all-in-one">here.</a></li>
+<li>In this publication, you will find a step-by-step guide to add a bridged connection in virt-manager.</li>
+<li>When we create a virtual machine, the connection that is automatically created is of the NAT type, this establishes a virtual network between the host and the guest machine. This allows the virtual machine to have an output to the internet, but the physical devices are not able to see the virtual machine on the network. So, for example, we cannot use this type of connection if we want to host a web server in our virtual machine, since we will not be able to access it.</li>
+<li>A bridged connection, however, causes the virtual machine to be recognized on the network as another device, being visible to all devices on the network.</li>
 </ul>
 <h2>Requirements:</h2>
 <ul>
-<li>Be minimally familiar with linux and the terminal, since the installation is done from the terminal.</li>
-<li>Have a computer with a linux distribution on which to install Nextcloud. If you do not have a computer with a distribution installed, you can follow <a href="/blog/posts/install-debian11/">this guide</a> to install the Debian distribution ready to host services.</li>
+<li>A wired connection.</li>
 </ul>
 <h2>Steps:</h2>
 <ol>
+<li>Open the connection editor on the physical machine. To do this, open a terminal and execute the following command:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">nm-connection-editor</code></pre>
+<ol start="2">
 <li>
-<p>Upgrade the system:</p>
-<p><strong>Debian derivatives</strong></p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade<br>``<span class="token variable"><span class="token variable">`</span><br>**Fedora derivatives<br><span class="token variable">`</span></span>``<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span><br><span class="token function">sudo</span> dnf upgrade<br><span class="token variable">`</span></span>``<br></code></pre>
+<p>Delete the ethernet connection profile. To do this, select the connection and delete it with the delete button in the bottom left corner.
+<img src="/assets/images/delete-profile.png" alt="Delete Profile"></p>
 </li>
 <li>
-<p>Install docker:</p>
+<p>Add a wired connection with the add button in the bottom left corner.
+<img src="/assets/images/add-bridge.png" alt="Add Bridged"></p>
+</li>
+<li>
+<p>We change the connection name to be the same as the interface name.
+<img src="/assets/images/Configure-bridge.png" alt="Configure Bridged"></p>
+</li>
+<li>
+<p>In the bridging section we add a ethernet connection.</p>
+</li>
+<li>
+<p>Select the device that will act as a bridge and save.
+<img src="/assets/images/configure-wired.png" alt="Configure Wired"></p>
+</li>
+<li>
+<p>The activation of the interface may take a couple of minutes. We will know that it has been activated, when executing the following command, we see a response as shown in the image.</p>
 </li>
 </ol>
-<ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">ip</span> ad</code></pre>
+<p><img src="/assets/images/bridge-validate.png" alt="Bridge Validation"></p>
+<ol start="8">
 <li>
-<p>The following command will download and install docker.</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -fsSL get.docker.com <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">sh</span></code></pre>
-</li>
-</ul>
-<ol start="3">
-<li>Install Nextcloud:</li>
-</ol>
-<ul>
-<li>
-<p>The following commands will download and install Nextcloud AIO depending on the machine architecture.</p>
-<p>For x64 processors:</p>
-<pre class="language-bash"><code class="language-bash"><span class="token comment"># For x64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest</code></pre>
-  <details>
-  <summary>For ARM processors such as the Raspberry Pi:</summary>
-<pre class="language-bash"><code class="language-bash"><span class="token comment"># For arm64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest-arm64</code></pre>
-  </details>
-</li>
-</ul>
-<ol start="4">
-<li>
-<p>Once the docker images have been downloaded and the containers have been started, we will be able to access the interface through port 8080. Example: https://ip-address:8080</p>
+<p>We open the virtual machine manager.</p>
 </li>
 <li>
-<p>To complete the installation we need a domain pointing to our server. If you already have a domain configured you can skip this step.</p>
-<p>To get a domain pointing to our server we can use <a href="https://www.duckdns.org/">duckdns.</a></p>
-<ol>
-<li>The first thing we have to do is to create an account.</li>
-<li>The next step is to add a domain.</li>
-<li>Now we have to go to the NAT/PAT section of our router to open port 443 and redirect it to port 443 of the ip of the machine where Nextcloud is running. The steps in each router may vary but it should look something like this.
-<img src="/assets/images/port-forwarding.png" alt="Port forwarding"></li>
-<li>Once the previous steps are done we will have our domain configured.</li>
-</ol>
+<p>Select the virtual machine to which you want to change the connection and with the right click select the open option.</p>
 </li>
 <li>
-<p>Once we have logged into the interface with step 4, we will have to provide our domain:</p>
-</li>
-</ol>
-<ul>
-<li>The prefix https:// should not be used.
-<img src="/assets/images/domain.png" alt="Domain"></li>
-</ul>
-<ol start="7">
-<li>
-<p>In the Optional Addons section, my recommendation is to disable Collabora and Nextcloud Talk and only enable OnlyOffice if you want an integrated office suite.
-<img src="/assets/images/Optional-Addons.png" alt="Optional Addons"></p>
+<p>In the show system hardware section go to the NIC option and change the network source to bridge device. In the option Device name: we will write the name of the interface that we have previously created.
+<img src="/assets/images/bridge-network.png" alt="Bridge Network"></p>
 </li>
 <li>
-<p>In the section Timezone Change, we will have to select our time zone, we can see which is our time zone in the <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List">following link</a>
-<img src="/assets/images/Timezone.png" alt="Timezone Change"></p>
-</li>
-<li>
-<p>Once our preferences have been configured, we will finish the installation by pressing the <strong>Start containers</strong> button.</p>
+<p>Once the previous step is done, we apply the changes and we will be finished.</p>
 </li>
 </ol>
 

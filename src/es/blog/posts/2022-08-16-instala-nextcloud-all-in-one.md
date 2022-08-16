@@ -4,8 +4,7 @@ tags:
   - nextcloudEs
 layout: postEs.njk
 title: Instala Nextcloud All in One de forma sencilla
-excerpt: En esta publicación, podrás encontrar una guía paso a paso para llevar
-  acabo una instalación de Nextcloud All in One.
+excerpt: En esta publicación, podrás encontrar una guía paso a paso para llevar acabo una instalación de Nextcloud All in One.
 featuredImage: /assets/images/nextcloudAIO-lg.png
 featuredImageMini: /assets/images/nextcloudAIO-mini.png
 imageAlt: Nextcloud AIO
@@ -82,7 +81,7 @@ imageAlt: Nextcloud AIO
 	2. El siguiente paso es añadir un dominio.
 	3. Ahora tenemos que ir a la sección NAT/PAT de nuestro router para abrir el puerto 443 y redireccionarlo al puerto 443 de la ip de la máquina en la que está corriendo Nextcloud. Los pasos en cada router pueden variar pero debería quedar algo así.
 	![Port forwarding](/assets/images/port-forwarding.png)
-	4. Una vez  hechos los pasos anteriores ya tenemos nuestro dominio configurado.
+	4. Una vez  hechos los pasos anteriores ya tendremos nuestro dominio configurado.
 
 6. Una vez hayamos iniciado sesión en la interfaz con el paso 4, tendremos que proporcionar nuestro dominio:
 

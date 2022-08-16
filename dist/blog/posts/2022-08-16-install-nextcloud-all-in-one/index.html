@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <title>Categories</title>
+    <title>Install Nextcloud All in One in a simple way</title>
     <style>
 
         summary::-webkit-details-marker {
@@ -104,182 +104,105 @@
 </header>
     <main>
         
-<section class="dark:text-white">
-    <details class=" mt-24 mb-2 group xl:hidden" open>
-        <summary class="list-none  cursor-pointer focus:outline-none">
-            <div class="flex items-center gap-2 focus:outline-none">
-                <div class="summary-chevron-up">
-                                <svg class=" stroke-gray-600 -rotate-90 group-open:rotate-0 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                            </div>
-                <span class="text-3xl font-bold">Recent Posts</span>
-            </div>
-        </summary>
-        <div class="mt-5 mb-14 flex flex-col gap-5 md:hidden">
-            
-            
-                <a href="/blog/posts/2022-08-16-install-nextcloud-all-in-one/" class="border border-gray-600 px-3 py-4 rounded-xl text-lg font-bold overflow-hidden whitespace-nowrap text-ellipsis shadow-md dark:border-[#6f675b]">Install Nextcloud All in One in a simple way</a>
-            
-                <a href="/blog/posts/2022-08-15-install-debian11/" class="border border-gray-600 px-3 py-4 rounded-xl text-lg font-bold overflow-hidden whitespace-nowrap text-ellipsis shadow-md dark:border-[#6f675b]">Install Debian 11 ready for hosting services</a>
-            
-        </div>
+<style>
+    #prose a:hover {
+        --tw-text-opacity: 1; color: rgb(251 146 60 / var(--tw-text-opacity));
+        rgb(251, 146, 60)
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 200ms;
 
-        <div class="hidden md:flex mt-5 mb-14 flex-col gap-5">
-            
-            
-                <a href="/blog/posts/2022-08-16-install-nextcloud-all-in-one/" class="border border-gray-600 px-4 py-6 rounded-2xl text-xl font-bold overflow-hidden whitespace-nowrap text-ellipsis shadow-md dark:border-[#6f675b]">Install Nextcloud All in One in a simple way: <span class=" font-normal text-gray-600 text-lg ml-2 dark:text-gray-400">In this publication, you will find a step-by-step guide to perform a Nextcloud All in One installation.</span> </a>
-            
-                <a href="/blog/posts/2022-08-15-install-debian11/" class="border border-gray-600 px-4 py-6 rounded-2xl text-xl font-bold overflow-hidden whitespace-nowrap text-ellipsis shadow-md dark:border-[#6f675b]">Install Debian 11 ready for hosting services: <span class=" font-normal text-gray-600 text-lg ml-2 dark:text-gray-400">In this post, you will find a step-by-step guide to perform a Debian installation optimized for hosting services.</span> </a>
-            
-        </div>
+    }
 
-    </details>
+    summary {
+        cursor: pointer;
+    }
+</style>
 
-    <p class="hidden xl:block text-3xl font-bold mt-44">Recent Posts</p>
-    <div class="hidden xl:flex justify-between gap-12 mt-16">
-        
-        
-            <a href="/blog/posts/2022-08-16-install-nextcloud-all-in-one/" class="relative flex-1 border border-gray-600 shadow-md px-6 py-8 rounded-2xl dark:border-[#6f675b]">
-                <p class="inline-block text-2xl font-bold decoration-4 after:block after:content-[''] after:h-1 after:bg-black after:rounded-full after:mt-4 dark:after:bg-gray-300">Install Nextcloud All in One in a simple way:</p>
-                <p class="text-gray-600 text-xl w-80 mt-4 dark:text-gray-400">In this publication, you will find a step-by-step guide to perform a Nextcloud All in One installation.</p>
-                <img class="absolute bottom-0 right-0 w-60 object-contain -z-10" src=/assets/images/nextcloudAIO-mini.png alt="Nextcloud AIO">
-            </a>
-        
-            <a href="/blog/posts/2022-08-15-install-debian11/" class="relative flex-1 border border-gray-600 shadow-md px-6 py-8 rounded-2xl dark:border-[#6f675b]">
-                <p class="inline-block text-2xl font-bold decoration-4 after:block after:content-[''] after:h-1 after:bg-black after:rounded-full after:mt-4 dark:after:bg-gray-300">Install Debian 11 ready for hosting services:</p>
-                <p class="text-gray-600 text-xl w-80 mt-4 dark:text-gray-400">In this post, you will find a step-by-step guide to perform a Debian installation optimized for hosting services.</p>
-                <img class="absolute bottom-0 right-0 w-60 object-contain -z-10" src=/assets/images/debian-logo-mini.png alt="Debian">
-            </a>
-        
+<article class="mt-28 mb-24 md:grid justify-center">
+    <div class="prose prose-h1:text-3xl prose-img:rounded-lg prose-img:border prose-img:border-gray-600 max-w-screen-lg md:prose xl:prose-lg xl:max-w-screen-lg dark:xl:prose-invert dark:md:prose-invert dark:prose-invert dark:prose-img:border-[#6f675b]" id="prose">
+
+        <h1>Install Nextcloud All in One in a simple way:</h1>
+<h2>Introduction:</h2>
+<ul>
+<li>In this publication, you will find a step-by-step guide to perform a Nextcloud All in One installation.</li>
+<li>The original documentation can be found <a href="https://github.com/nextcloud/all-in-one">here.</a></li>
+</ul>
+<h2>Requirements:</h2>
+<ul>
+<li>Be minimally familiar with linux and the terminal, since the installation is done from the terminal.</li>
+<li>Have a computer with a linux distribution on which to install Nextcloud. If you do not have a computer with a distribution installed, you can follow <a href="/en/blog/posts/install-debian11/">this guide</a> to install the Debian distribution ready to host services.</li>
+</ul>
+<h2>Steps:</h2>
+<ol>
+<li>
+<p>Upgrade the system:</p>
+<p><strong>Debian derivatives</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade<br>``<span class="token variable"><span class="token variable">`</span><br>**Fedora derivatives<br><span class="token variable">`</span></span>``<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span><br><span class="token function">sudo</span> dnf upgrade<br><span class="token variable">`</span></span>``<br></code></pre>
+</li>
+<li>
+<p>Install docker:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>The following command will download and install docker.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -fsSL get.docker.com <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">sh</span></code></pre>
+</li>
+</ul>
+<ol start="3">
+<li>Install Nextcloud:</li>
+</ol>
+<ul>
+<li>
+<p>The following commands will download and install Nextcloud AIO depending on the machine architecture.</p>
+<p>For x64 processors:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># For x64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest</code></pre>
+  <details>
+  <summary>For ARM processors such as the Raspberry Pi:</summary>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># For arm64 CPUs:</span><br><span class="token function">sudo</span> <span class="token function">docker</span> run -it <span class="token punctuation">\</span><br>--name nextcloud-aio-mastercontainer <span class="token punctuation">\</span><br>--restart always <span class="token punctuation">\</span><br>-p <span class="token number">80</span>:80 <span class="token punctuation">\</span><br>-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span><br>-p <span class="token number">8443</span>:8443 <span class="token punctuation">\</span><br>--volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config <span class="token punctuation">\</span><br>--volume /var/run/docker.sock:/var/run/docker.sock:ro <span class="token punctuation">\</span><br>nextcloud/all-in-one:latest-arm64</code></pre>
+  </details>
+</li>
+</ul>
+<ol start="4">
+<li>
+<p>Once the docker images have been downloaded and the containers have been started, we will be able to access the interface through port 8080. Example: https://ip-address:8080</p>
+</li>
+<li>
+<p>To complete the installation we need a domain pointing to our server. If you already have a domain configured you can skip this step.</p>
+<p>To get a domain pointing to our server we can use <a href="https://www.duckdns.org/">duckdns.</a></p>
+<ol>
+<li>The first thing we have to do is to create an account.</li>
+<li>The next step is to add a domain.</li>
+<li>Now we have to go to the NAT/PAT section of our router to open port 443 and redirect it to port 443 of the ip of the machine where Nextcloud is running. The steps in each router may vary but it should look something like this.
+<img src="/assets/images/port-forwarding.png" alt="Port forwarding"></li>
+<li>Once the previous steps are done we will have our domain configured.</li>
+</ol>
+</li>
+<li>
+<p>Once we have logged into the interface with step 4, we will have to provide our domain:</p>
+</li>
+</ol>
+<ul>
+<li>The prefix https:// should not be used.
+<img src="/assets/images/domain.png" alt="Domain"></li>
+</ul>
+<ol start="7">
+<li>
+<p>In the Optional Addons section, my recommendation is to disable Collabora and Nextcloud Talk and only enable OnlyOffice if you want an integrated office suite.
+<img src="/assets/images/Optional-Addons.png" alt="Optional Addons"></p>
+</li>
+<li>
+<p>In the section Timezone Change, we will have to select our time zone, we can see which is our time zone in the <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List">following link</a>
+<img src="/assets/images/Timezone.png" alt="Timezone Change"></p>
+</li>
+<li>
+<p>Once our preferences have been configured, we will finish the installation by pressing the <strong>Start containers</strong> button.</p>
+</li>
+</ol>
+
     </div>
-
-
-    <h2 class=" font-bold text-3xl mt-6 xl:mt-20">Categories</h2>
-
-    <div class="grid text-left mt-8 mb-28 gap-8 md:grid-cols-3 md:gap-6 md:mt-16 xl:justify-between xl:grid-cols-3 xl:gap-48 xl:mt-24">
-        
-         <a href="/categories/blender" class="w-full rounded-2xl min-h-60 flex items-center flex-col text-center justify-between px-7 md:px-3 xl:hidden hover:-translate-y-1 transition-all duration-200 hover:shadow-md" style="background-color: #313131;">
-            <img src=/assets/images/blender-logo.png alt="categorie image" class="w-32">
-            <h2 class="font-bold text-white text-3xl -mt-5"> Blender</h2>
-            <p class="text-white mt-4 mb-7 text-lg leading-tight">The free an open-source 3D creation suite.</p>
-         </a>
-
-
-        <div class="hidden xl:flex m-0 relative flex-col text-center group">
-            <div class="absolute inset-0 -z-10 rounded-2xl scale-50 transition-all duration-300 group-hover:scale-x-125 group-hover:scale-y-110 shadow-3xl dark:bg-[#242829]"></div> 
-            <div class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #313131;"><img class="my-7" src=/assets/images/blender-logo.png></div>
-                <h3 class="font-bold text-3xl my-3 text-left group-hover:text-center group-hover:-translate-y-40 transition-all duration-300">Blender</h3>
-                <div class="flex justify-between items-center transition-all duration-300">
-                    <div class="flex items-center">
-                        <a href="/"><img class="w-8 h-8 object-cover rounded-full border-2 border-orange-400" src="/assets/images/gato1.jpg"></a>
-                        <a href="/" class="my-0 ml-2 transition-all font-bold text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
-                    </div>
-                    <a href="/categories/blender" class="border-solid border-orange-400 rounded-2xl pt-1 border-2 m-0 py-1 px-2 transition-all text-sm font-bold hover:text-white hover:bg-orange-400">5 posts</a>
-                </div>
-            <div class="absolute hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-20">
-                <div class="flex justify-center items-center">
-                    <a href="/categories/blender" class="border-2 border-orange-400 py-2 px-8 rounded-full font-bold text-2xl hover:bg-orange-400 hover:text-white fill-black hover:fill-white group transition-all flex items-center gap-2 group dark:fill-white">
-                        <p class="transition-all">See All</p>
-                        <svg class="fill-inherit transition-all" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="absolute -translate-y-16 hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-36 text-lg text-gray-700 dark:text-gray-400">The free an open-source 3D creation suite.</div>
-
-        </div>
-        
-         <a href="/categories/home-assistant" class="w-full rounded-2xl min-h-60 flex items-center flex-col text-center justify-between px-7 md:px-3 xl:hidden hover:-translate-y-1 transition-all duration-200 hover:shadow-md" style="background-color: #41BDF5;">
-            <img src=/assets/images/ha.png alt="categorie image" class="w-32">
-            <h2 class="font-bold text-white text-3xl -mt-5"> Home Assistant</h2>
-            <p class="text-white mt-4 mb-7 text-lg leading-tight">The free and open-source home automation suite.</p>
-         </a>
-
-
-        <div class="hidden xl:flex m-0 relative flex-col text-center group">
-            <div class="absolute inset-0 -z-10 rounded-2xl scale-50 transition-all duration-300 group-hover:scale-x-125 group-hover:scale-y-110 shadow-3xl dark:bg-[#242829]"></div> 
-            <div class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #41BDF5;"><img class="my-7" src=/assets/images/ha.png></div>
-                <h3 class="font-bold text-3xl my-3 text-left group-hover:text-center group-hover:-translate-y-40 transition-all duration-300">Home Assistant</h3>
-                <div class="flex justify-between items-center transition-all duration-300">
-                    <div class="flex items-center">
-                        <a href="/"><img class="w-8 h-8 object-cover rounded-full border-2 border-orange-400" src="/assets/images/gato1.jpg"></a>
-                        <a href="/" class="my-0 ml-2 transition-all font-bold text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
-                    </div>
-                    <a href="/categories/home-assistant" class="border-solid border-orange-400 rounded-2xl pt-1 border-2 m-0 py-1 px-2 transition-all text-sm font-bold hover:text-white hover:bg-orange-400">5 posts</a>
-                </div>
-            <div class="absolute hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-20">
-                <div class="flex justify-center items-center">
-                    <a href="/categories/home-assistant" class="border-2 border-orange-400 py-2 px-8 rounded-full font-bold text-2xl hover:bg-orange-400 hover:text-white fill-black hover:fill-white group transition-all flex items-center gap-2 group dark:fill-white">
-                        <p class="transition-all">See All</p>
-                        <svg class="fill-inherit transition-all" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="absolute -translate-y-16 hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-36 text-lg text-gray-700 dark:text-gray-400">The free and open-source home automation suite.</div>
-
-        </div>
-        
-         <a href="/categories/gnu-linux" class="w-full rounded-2xl min-h-60 flex items-center flex-col text-center justify-between px-7 md:px-3 xl:hidden hover:-translate-y-1 transition-all duration-200 hover:shadow-md" style="background-color: #F8BF11;">
-            <img src=/assets/images/linux.png alt="categorie image" class="w-32">
-            <h2 class="font-bold text-white text-3xl -mt-5"> GNU / Linux</h2>
-            <p class="text-white mt-4 mb-7 text-lg leading-tight">The Unix-like open-source operating system.</p>
-         </a>
-
-
-        <div class="hidden xl:flex m-0 relative flex-col text-center group">
-            <div class="absolute inset-0 -z-10 rounded-2xl scale-50 transition-all duration-300 group-hover:scale-x-125 group-hover:scale-y-110 shadow-3xl dark:bg-[#242829]"></div> 
-            <div class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #F8BF11;"><img class="my-7" src=/assets/images/linux.png></div>
-                <h3 class="font-bold text-3xl my-3 text-left group-hover:text-center group-hover:-translate-y-40 transition-all duration-300">GNU / Linux</h3>
-                <div class="flex justify-between items-center transition-all duration-300">
-                    <div class="flex items-center">
-                        <a href="/"><img class="w-8 h-8 object-cover rounded-full border-2 border-orange-400" src="/assets/images/gato1.jpg"></a>
-                        <a href="/" class="my-0 ml-2 transition-all font-bold text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
-                    </div>
-                    <a href="/categories/gnu-linux" class="border-solid border-orange-400 rounded-2xl pt-1 border-2 m-0 py-1 px-2 transition-all text-sm font-bold hover:text-white hover:bg-orange-400">5 posts</a>
-                </div>
-            <div class="absolute hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-20">
-                <div class="flex justify-center items-center">
-                    <a href="/categories/gnu-linux" class="border-2 border-orange-400 py-2 px-8 rounded-full font-bold text-2xl hover:bg-orange-400 hover:text-white fill-black hover:fill-white group transition-all flex items-center gap-2 group dark:fill-white">
-                        <p class="transition-all">See All</p>
-                        <svg class="fill-inherit transition-all" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="absolute -translate-y-16 hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-36 text-lg text-gray-700 dark:text-gray-400">The Unix-like open-source operating system.</div>
-
-        </div>
-        
-         <a href="/categories/nextcloud" class="w-full rounded-2xl min-h-60 flex items-center flex-col text-center justify-between px-7 md:px-3 xl:hidden hover:-translate-y-1 transition-all duration-200 hover:shadow-md" style="background-color: #0082c9;">
-            <img src=/assets/images/nextcloud.png alt="categorie image" class="w-32">
-            <h2 class="font-bold text-white text-3xl -mt-5"> Nextcloud</h2>
-            <p class="text-white mt-4 mb-7 text-lg leading-tight">The suite for creating and using file hosting services.</p>
-         </a>
-
-
-        <div class="hidden xl:flex m-0 relative flex-col text-center group">
-            <div class="absolute inset-0 -z-10 rounded-2xl scale-50 transition-all duration-300 group-hover:scale-x-125 group-hover:scale-y-110 shadow-3xl dark:bg-[#242829]"></div> 
-            <div class="rounded-2xl transition-all duration-300 flex justify-center group-hover:-translate-y-32 group-hover:scale-75 shadow-3xl" style="background-color: #0082c9;"><img class="my-7" src=/assets/images/nextcloud.png></div>
-                <h3 class="font-bold text-3xl my-3 text-left group-hover:text-center group-hover:-translate-y-40 transition-all duration-300">Nextcloud</h3>
-                <div class="flex justify-between items-center transition-all duration-300">
-                    <div class="flex items-center">
-                        <a href="/"><img class="w-8 h-8 object-cover rounded-full border-2 border-orange-400" src="/assets/images/gato1.jpg"></a>
-                        <a href="/" class="my-0 ml-2 transition-all font-bold text-sm underline underline-offset-0 decoration-0 decoration-transparent hover:text-orange-400 hover:underline-offset-2 hover:decoration-orange-400 hover:decoration-2 duration-200">Jorge Antón</a>
-                    </div>
-                    <a href="/categories/nextcloud" class="border-solid border-orange-400 rounded-2xl pt-1 border-2 m-0 py-1 px-2 transition-all text-sm font-bold hover:text-white hover:bg-orange-400">5 posts</a>
-                </div>
-            <div class="absolute hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-20">
-                <div class="flex justify-center items-center">
-                    <a href="/categories/nextcloud" class="border-2 border-orange-400 py-2 px-8 rounded-full font-bold text-2xl hover:bg-orange-400 hover:text-white fill-black hover:fill-white group transition-all flex items-center gap-2 group dark:fill-white">
-                        <p class="transition-all">See All</p>
-                        <svg class="fill-inherit transition-all" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="absolute -translate-y-16 hidden bottom-0 right-0 left-0 group-hover:block transition-all duration-300 group-hover:-translate-y-36 text-lg text-gray-700 dark:text-gray-400">The suite for creating and using file hosting services.</div>
-
-        </div>
-        
-        
-     </div>
-</section>
+</article>
     </main>
     <footer class=" mt-auto md:flex md:flex-row-reverse items-center md:justify-between">
     <div class="flex justify-center gap-3">

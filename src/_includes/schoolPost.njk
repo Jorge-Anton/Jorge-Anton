@@ -1,0 +1,27 @@
+---
+layout: layoutEs.njk
+---
+
+<style>
+    #prose a:hover {
+        --tw-text-opacity: 1; color: rgb(251 146 60 / var(--tw-text-opacity));
+        rgb(251, 146, 60)
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 200ms;
+
+    }
+
+    summary {
+        cursor: pointer;
+    }
+
+
+</style>
+
+<article class="mt-28 mb-24 md:grid justify-center">
+    <div class="prose prose-h1:text-3xl prose-img:rounded-lg prose-img:border prose-img:shadow-md prose-img:border-gray-600 max-w-screen-lg md:prose xl:prose-lg xl:prose-h1:text-3xl md:prose-h1:text-2xl xl:max-w-screen-lg dark:xl:prose-invert dark:md:prose-invert dark:prose-invert dark:prose-img:border-[#6f675b]" id="prose">
+
+        {{content | safe}}
+    </div>
+</article>

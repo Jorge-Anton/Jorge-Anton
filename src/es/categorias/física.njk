@@ -1,0 +1,60 @@
+---
+title: Física
+layout: layoutEs.njk
+pagination:
+    data: collections.fisica
+    size: 6
+    alias: posts
+    reverse: true
+---
+
+<section class="dark:text-white">
+    <div class="flex">
+        <h1 class="font-bold text-3xl mt-24 xl:mt-28">{{title}}</h1>
+    </div>
+    <div class="flex flex-col mt-12 gap-10 md:grid md:grid-cols-2 xl:hidden">
+        {% for post in posts %}
+            <a href={{post.url}} class="border border-gray-600 shadow-md py-5 rounded-2xl dark:border-[#6f675b]">
+                <h1 class="font-bold text-xl text-center px-3 overflow-hidden text-ellipsis whitespace-nowrap">{{post.data.title}}:</h1>
+                <div class="h-1 bg-black rounded-full my-3 mx-11 dark:bg-gray-300"></div>
+                <p class="px-11 text-center text-gray-600 dark:text-gray-400">{{post.data.excerpt}}</p>
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="hidden xl:grid grid-cols-3 mt-24 gap-20">
+        {% for post in posts %}
+            <a href="{{post.url}}" class="rounded-2xl outline-1 outline outline-[#A0A0A0] dark:outline-[#6f675b]">
+                <div class="bg-[#232323] rounded-t-2xl">
+                    <img class=" w-96 rounded-t-2xl" src="{{post.data.featuredImage}}" alt="{{post.data.imageAlt}}">
+                </div>
+                <h1 class="mt-10 px-8 font-bold text-3xl">{{post.data.title}}</h1>
+                <p class="px-8 mt-7 text-gray-600 text-xl mb-16 dark:text-gray-400">{{post.data.excerpt}}</p>
+            </a>
+        {% endfor %}
+    </div>
+
+
+    <div class="flex justify-between mt-8 mb-24">
+        <div>
+            {% if pagination.href.previous %}
+                <a class="flex items-center justify-center gap-2 bg-black rounded-full xl:text-xl text-white px-4 py-2 font-bold hover:text-black hover:bg-orange-400 transition-all duration-200 group" href="{{pagination.href.previous}}">
+                    <svg class="xl:hidden rotate-180 fill-white group-hover:fill-black transition-all duration-200" width="12" height="8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.354 4.354a.5.5 0 0 0 0-.708L8.172.464a.5.5 0 1 0-.708.708L10.293 4 7.464 6.828a.5.5 0 1 0 .708.708l3.182-3.182ZM11 3.5H0v1h11v-1Z"/></svg>
+                    <svg class="hidden xl:block rotate-180 fill-white group-hover:fill-black transition-all duration-200" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
+                    <p>Anterior</p>
+                </a>
+            {% endif %}
+        </div>
+
+        <div>
+            {% if pagination.href.next %}
+                <a class="flex items-center justify-center gap-2 bg-black rounded-full xl:text-xl text-white px-4 py-2 font-bold hover:text-black hover:bg-orange-400 transition-all duration-200 group" href="{{pagination.href.next}}">
+                    <p>Siguiente</p>
+                    <svg class="xl:hidden fill-white group-hover:fill-black transition-all duration-200" width="12" height="8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.354 4.354a.5.5 0 0 0 0-.708L8.172.464a.5.5 0 1 0-.708.708L10.293 4 7.464 6.828a.5.5 0 1 0 .708.708l3.182-3.182ZM11 3.5H0v1h11v-1Z"/></svg>
+                    <svg class="hidden xl:block fill-white group-hover:fill-black transition-all duration-200" width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.707 8.707a1 1 0 0 0 0-1.414L11.343.929A1 1 0 1 0 9.93 2.343L15.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h17V7H0v2Z"/></svg>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+</section>

@@ -1,5 +1,5 @@
 ---
-title: Categories
+title: Categorias
 layout: layoutEs.njk
 ---
 
@@ -10,7 +10,7 @@ layout: layoutEs.njk
                 <div class="summary-chevron-up">
                                 <svg class=" stroke-gray-600 -rotate-90 group-open:rotate-0 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </div>
-                <span class="text-3xl font-bold">Recent Posts</span>
+                <span class="text-3xl font-bold">Publicaciones Recientes</span>
             </div>
         </summary>
         <div class="mt-5 mb-14 flex flex-col gap-5 md:hidden">
@@ -29,7 +29,7 @@ layout: layoutEs.njk
 
     </details>
 
-    <p class="hidden xl:block text-3xl font-bold mt-44">Recent Posts</p>
+    <p class="hidden xl:block text-3xl font-bold mt-44">Publicaciones Recientes</p>
     <div class="hidden xl:flex justify-between gap-12 mt-16">
         {% set latest_posts = collections.postEs | reverse %}
         {% for post in latest_posts.slice(0,2) %}
@@ -42,7 +42,7 @@ layout: layoutEs.njk
     </div>
 
 
-    <h2 class=" font-bold text-3xl mt-6 xl:mt-20">Categories</h2>
+    <h2 class=" font-bold text-3xl mt-6 xl:mt-20">Categorias</h2>
 
     <div class="grid text-left mt-8 mb-28 gap-8 md:grid-cols-3 md:gap-6 md:mt-16 xl:justify-between xl:grid-cols-3 xl:gap-48 xl:mt-24">
         {% for post in collections.categorieEs %}

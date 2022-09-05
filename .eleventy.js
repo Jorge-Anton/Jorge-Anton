@@ -1,4 +1,5 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const katex = require("katex");
 
 module.exports = (config) => {
     config.addPlugin(syntaxHighlight)
@@ -14,6 +15,21 @@ module.exports = (config) => {
         open: true,
     });
     config.setDataDeepMerge(true);
+
+    // config.addFilter("latexCenter", (content) => {
+    //     return content.replace(/\$\$(.+?)\$\$/g, (_, equation) => {
+    //         let cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+      
+    //         return katex.renderToString(cleanEquation, { throwOnError: false });
+    //     });
+    // });
+
+    // config.addFilter("latex", (content) => {
+    //     return content.replace(/\$(.+?)\$/g, (_, equation) => {
+    //         cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+    //         return katex.renderToString(cleanEquation, { throwOnError: false});
+    //     });
+    // });
 
     return {
         dir: {

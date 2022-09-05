@@ -1764,12 +1764,20 @@ video {
 .prose-img\:rounded-2xl :is(:where(img):not(:where([class~="not-prose"] *))) {
   border-radius: 1rem;
 }
+.prose-img\:rounded-lg :is(:where(img):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.5rem;
+}
 .prose-img\:border :is(:where(img):not(:where([class~="not-prose"] *))) {
   border-width: 1px;
 }
 .prose-img\:border-gray-600 :is(:where(img):not(:where([class~="not-prose"] *))) {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
+}
+.prose-img\:shadow-md :is(:where(img):not(:where([class~="not-prose"] *))) {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 @media (prefers-color-scheme: dark) {
 
@@ -2449,6 +2457,11 @@ video {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+
+  .md\:prose-h1\:text-2xl :is(:where(h1):not(:where([class~="not-prose"] *))) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media (prefers-color-scheme: dark) {
 
@@ -2825,6 +2838,11 @@ video {
   .xl\:hover\:no-underline:hover {
     -webkit-text-decoration-line: none;
             text-decoration-line: none;
+  }
+
+  .xl\:prose-h1\:text-3xl :is(:where(h1):not(:where([class~="not-prose"] *))) {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 @media (prefers-color-scheme: dark) {
